@@ -1,0 +1,33 @@
+# 将来的には対応する規約の読み込み
+inherit_from: .rubocop_todo.yml
+
+# 追加した規約ファイル読み込み
+require:
+  - rubocop-rails 
+
+
+AllCops:
+
+  #　除外
+  Exclude:
+    - 'config.ru'
+
+
+# １行あたりの文字数をチェックする
+Layout/LineLength:
+   Max: 120
+
+#　下記のファイルはチェックの対象から外す
+Exclude:
+  
+  - "Rakefile"
+  - "spec/rails_helper.rb"
+  - "spec/spec_helper.rb"
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+#　クラスのコメント必須を無視
+Documentation: 
+  Enabled: false
