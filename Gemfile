@@ -52,5 +52,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+#ログイン機能
+gem 'device'
+#ページネーション
+gem 'kaminari', '~> 1.2.1'
+
+gem 'jquery-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
