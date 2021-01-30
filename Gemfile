@@ -53,7 +53,7 @@ group :development do
 end
 
 #ログイン機能
-gem 'device'
+gem 'devise'
 #ページネーション
 gem 'kaminari', '~> 1.2.1'
 
