@@ -1,0 +1,60 @@
+.header
+  .header-contents
+    .header-top
+      .header-top_left
+        = link_to root_path do
+          %h1.header-top_left--title Firedept
+      .header-top_right1
+        - if user_signed_in?
+          %div
+            -# = render 'layouts/circle'
+          .header-top_right_user_info
+            .header-top_right_user_info--link.display-flex
+              .header-top_user_info--avatar
+                = image_tag "#{current_user.avatar}", class: "avatar"
+              .header-top_right_user_info--username
+                = current_user.username
+          
+          = link_to destroy_user_session_path,method: :delete do
+            %input.btn.btn-success.header-top_right--box{type: "submit", value: "ログアウト"}
+
+
+        - else 
+          = link_to new_user_registration_path do
+            %input.btn.btn-success.header-top_right--box{type: "submit", value: "新規登録"}
+          = link_to new_user_session_path do
+            %input.btn.btn-success.header-top_right--box{type: "submit", value: "ログイン"}
+          -# =link_to gestlogin_path do
+          -# %input.btn.btn-success.header-top_right--box{type: "submit", value: "ゲストログイン"} 
+
+      .header-top_right2
+        - if user_signed_in?
+          %ul.header-top_box
+            %li
+              = link_to "マイページ",user_path(= current_user),class: "header-top_box--content"
+            %li.header-top_box--borderTop
+              = link_to "メッセージ",rooms_path ,class: "header-top_box--content"
+            %li.header-top_box--borderTop
+              = link_to "消防署検索",firedept_path ,class: "header-top_box--content"
+            %li.header-top_box--borderTop
+              = link_to "消防法令改正",fire-service-act_path ,class: "header-top_box--content"
+            %li.header-top_box--borderTop
+              = link_to "ユーザー一覧",users_path ,class: "header-top_box--content"
+        - else 
+          %ul.header-top_box
+          %li
+              = link_to "消防署検索",firedept_path ,class: "header-top_box--content"
+            %li.header-top_box--borderTop
+              = link_to "消防法令改正",fire-service-act_path ,class: "header-top_box--content"
+
+    .header-bottom
+      %ul.header-bottom_list
+        -  @tags = ["警防","救助","救急","予防"]
+        -  @tags.each do |tag|
+            %li.header-bottom_list_item
+              =  link_to tag, tweets_path(tag_name: tag),class: "header-bottom_list--name"
+        %ul.header-bottom_list_tags
+          = link_to "全てのタグ",tags_tweets_path,class: ".header-bottom_list--name"
+          
+          
+

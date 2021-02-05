@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-01-29T00:55:02.292Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="JwsH63tUwjxPnT_UsGYq" version="13.10.0" type="embed" pages="5">
+<mxfile host="65bd71144e" modified="2021-02-02T12:32:14.844Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="gIMHlS1glv4iyRar5jby" version="13.10.0" type="embed" pages="5">
     <diagram id="-Lr9QzyDPwgJhjDISSyo" name="ER図">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2055" dy="1673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -918,7 +918,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="TTmIYDW5OlHOhle5y8PK" name="インフラ構成図">
-        <mxGraphModel dx="1813" dy="1955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2055" dy="1674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="2nQnzojFz6xnWkrXL7M0-0"/>
                 <mxCell id="2nQnzojFz6xnWkrXL7M0-1" parent="2nQnzojFz6xnWkrXL7M0-0"/>
@@ -1026,7 +1026,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="vQvg3flgSK-NwNN0C-NW" name="メモ">
-        <mxGraphModel dx="1287" dy="1674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1228" dy="1673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="lv91LDTTZE1BpURJQJA3-0"/>
                 <mxCell id="lv91LDTTZE1BpURJQJA3-1" parent="lv91LDTTZE1BpURJQJA3-0"/>
@@ -1043,17 +1043,20 @@
                     <mxGeometry y="585" width="530" height="145" as="geometry"/>
                 </mxCell>
                 <mxCell id="LWqx09g9LvcTzlY1jr6l-6" value="&lt;h1&gt;docker-composeの順番&lt;/h1&gt;&lt;div&gt;のndocker-compose build&lt;/div&gt;&lt;div&gt;　　　　↓&lt;/div&gt;&lt;div&gt;docker-compose up -d&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 　　↓&amp;nbsp;&lt;/div&gt;&lt;div&gt;docker-compose run web rails db:create(初めの場合)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="lv91LDTTZE1BpURJQJA3-1" vertex="1">
-                    <mxGeometry y="730" width="550" height="200" as="geometry"/>
+                    <mxGeometry y="730" width="310" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="bgexeJqOovKsAtRKDZm5-0" value="&lt;h1&gt;マイグレーションの実行&lt;/h1&gt;&lt;div&gt;rails db:migrate&lt;/div&gt;&lt;div&gt;rake db:migrate&amp;nbsp; &amp;nbsp; どちらでも良い（rails ５から統一となった）&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="lv91LDTTZE1BpURJQJA3-1">
+                    <mxGeometry x="310" y="730" width="290" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="R4CJUljdHHOofJeU4qu5" name="作成チャート">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1228" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="QGQ7rJO3fBUxPKZl4k6h-0"/>
                 <mxCell id="QGQ7rJO3fBUxPKZl4k6h-1" parent="QGQ7rJO3fBUxPKZl4k6h-0"/>
-                <mxCell id="QGQ7rJO3fBUxPKZl4k6h-3" value="&lt;h1&gt;rails ポートフォリオ作成チャート&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;１　　ユーザーテーブルを作成（外部キー参照がないため最初に作る）&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="QGQ7rJO3fBUxPKZl4k6h-1" vertex="1">
+                <mxCell id="QGQ7rJO3fBUxPKZl4k6h-3" value="&lt;h1&gt;rails ポートフォリオ作成チャート&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;１　　ユーザーテーブルを作成（外部キー参照がないため最初に作る）&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;２　　deviceにてコントローラーモデルビューを作成&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="QGQ7rJO3fBUxPKZl4k6h-1" vertex="1">
                     <mxGeometry y="10" width="630" height="770" as="geometry"/>
                 </mxCell>
             </root>

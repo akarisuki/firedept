@@ -1,0 +1,12 @@
+.title
+  タイトル
+  =  @tweet.= time_zone_options_for_select 
+.text
+  内容
+  =  @tweet.text
+.user
+  投稿者はこの人
+  =  link_to  @tweet.user.username, user_path(@tweet.user.id), class: 'header_top_userMenu--name'
+- if user_signed_in?  &&  current_user.id == @tweet.user_id
+  = link_to '編集', edit_tweet_path(@tweet.id)
+  = link_to '削除', tweet_path(@tweet.id),method: :delete

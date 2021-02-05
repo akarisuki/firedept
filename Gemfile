@@ -52,10 +52,24 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+#タグ機能
+gem 'acts-as-taggable-on', '~> 6.0'
+
+gem 'fog-aws'
+gem 'gon'
+
 #ログイン機能
 gem 'devise'
 #ページネーション
 gem 'kaminari', '~> 1.2.1'
+#haml記法
+gem 'erb2haml'
+gem 'haml-rails'
+gem 'slim-rails'
+
+#動画投稿機能
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'jquery-rails'
 
