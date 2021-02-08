@@ -1,0 +1,12 @@
+- if user_signed_in?
+  - if tweet.like_user(current_user.id)
+    = like_to tweet_like_path(tweet.likes, tweet_id: tweet.id), method: :delete, remote: true do
+      %i.fa.fa-heart{"aria-hidden" => "true", style: "color: red;"}
+        = tweet.likes.count
+  - else
+    = link_to tweet_likes_path(tweet.id), method: :post, remote: true do
+      %i.fa.fa-heart{"aria-hidden" => "true",style: "color: #C0C0C0;"}
+- else
+  %i.fa.fa-heart{"aria-hidden" => "true"}
+    = tweet.likes.count
+    

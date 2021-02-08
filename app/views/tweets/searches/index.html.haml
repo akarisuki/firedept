@@ -1,0 +1,7 @@
+.main
+  .tweets
+    = form_with(url: tweets_searches_path, local: true,method: :get) do |f|
+      = text_field :keyword, placeholder: 'タイトルを検索'
+      = f.submit
+    .tweets_list
+      = render 'tweets/tweet'

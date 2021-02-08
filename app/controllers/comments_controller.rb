@@ -1,13 +1,45 @@
 class CommentsController < ApplicationController
+  before_action :set_tweet, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
   def create
-    @comment = Comment.create(comment_params)
-    redirect_to tweet_path(@comment.tweet_id)
+    @comment = @tweet.create(comment_params)
+    if @comment.save
+        @comment = Comment.new
+        gets_all_comments
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @comment.update(comment_params)
+        gets_all_comments
+    end
+  end
+
+  def destroy
+    if @comment.destroy
+        gets_all_comments
+    end
   end
 
   private
 
+  def set_tweet
+      @tweet = Tweet.find(params[:tweet_id])
+  end
+
+  def set_comment
+      @comment = Comment.find(params[:id])
+  end
+
+  def gets_all_comments
+      @comments = @tweet.comments.includes(:user).order('updated_at desc')
+  end
+
   def comment_params
-    params.require(:comment).permit(:content).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
+      params.require(:comment).permit(:content).merge(user_id: current_user.id)
   end
 
 

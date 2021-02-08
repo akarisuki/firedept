@@ -1,14 +1,13 @@
 .main
   .tweets
+    = render "resationships/follow"
+    = like_to "いいね！した投稿", likes_user_path
+    投稿一覧
     .tweets_list
-      = @username
-      投稿一覧
-      -  @tweet.each do |tweet|
-        .tweets_list--item
-          タイトル
-          =  link_to tweet.title, tweet_path(tweet.id)
-          内容
-          =  link_to tweet.text,  tweet_path(tweet.id)
-          投稿日
-          =  tweet.updated_at
-      = paginate(@tweets)
+    = render 'tweets/tweet'
+    = link_to "フォロー", following_user_path(@user)
+    = @user.following.count
+    = likn_to "フォロワー", following_user_path(@user)
+    = @user.followers.count
+    - if current_user == @user
+    

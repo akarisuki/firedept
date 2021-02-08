@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
   end
 
   def new
-    @tweet = Tweet.new
+      @tweet = Tweet.new
   end
 
   def create
@@ -21,12 +21,15 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    if @tweet.user_id != current_user.id
+      redirect_to root_path, notice: "不正な操作です"
+    end
   end
 
   def update
     @tweet.update(tweet_params)
     if @tweet.save
-      redirect_to root_path, notice: '編集しました'
+      redirect_to tweet_path(@tweet.id), notice: '編集しました'
     else
       flash.now[:alert] = 'メッセージを入力して下さい。'
       render :edit
@@ -35,7 +38,8 @@ class TweetsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user)
+    @comments = @tweet.comments.includes(:user).order('created_at asc')
+    @user = @tweet.user
   end
 
   def destroy
@@ -55,6 +59,8 @@ class TweetsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    unless current_user
+    redirect_to root_path, notice: 'アカウント登録またはログインして下さい'
+    end
   end
 end

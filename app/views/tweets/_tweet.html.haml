@@ -1,0 +1,16 @@
+
+
+- @tweets.each do |tweet|
+  .tweets_list--item
+    タイトル
+    = link_to tweet.title, tweet_path(tweet,id)
+    投稿者
+    = link_to tweet.user.username, user_path(tweet.user.id)
+    投稿日
+    = tweet.updated_at.strftime("%Y-%m-%d %H:%M")
+    %div{id: "like_#{tweet.id}"}
+      =  render 'likes/like', tweet: tweet
+
+= paginate(@tweets)
+
+      

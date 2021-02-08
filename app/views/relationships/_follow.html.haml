@@ -1,0 +1,9 @@
+- if user_signed_in? && @user.id != current_user.id
+  #follow_form
+    - if current_user.following?(@user)
+      = form_with(model: current_user, url: relationship_path(@user.id),method: :delete, remote: true) do
+        = f.submit "フォロー解除", class: "btn btn-outline-secondary"
+    - else
+      = form_with(model: current_user, url: relationship_path(@user.id),method: :delete, remote: true) do
+        = hidden_field_tag :following_id, @user.id
+        = f.submit "フォローする", class: "btn btn-outline-secondary"

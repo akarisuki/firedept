@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
-  get 'comments/create'
+
+  get 'rooms/index'
+  get 'rooms/create'
+  get 'rooms/show'
+  get 'messages/create'
+  get 'messages/edit'
+  get 'messages/update'
+  get 'messages/destroy'
   devise_for :users
   root to: 'tweets#index'
-  resources :tweets
-  resources :users, only: :show
+  namespace :tweets do
+    resources :searches, only: :index
+  end
+  resources :tweets do 
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :edit, :update, :destroy]
+  end
+  
+  resources :users, only: [:index, :show] do
+    member do
+      get :likes, :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
