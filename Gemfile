@@ -73,6 +73,9 @@ gem 'slim-rails'
 #動画投稿機能
 gem 'carrierwave'
 gem 'mini_magick'
+#S3ストレージ
+gem 'aws-sdk-rails'
+gem 'aws-sdk-s3'
 
 gem 'jquery-rails'
 

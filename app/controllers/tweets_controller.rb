@@ -1,9 +1,13 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :destroy, :show, :update]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :authenticate_user!,only:  [:new, :create, :edit, :update, :destroy]
   
   def index
     @tweets = Tweet.includes(:user).order('updated_at desc').page(params[:page]).per(5)
+  end
+
+  def likes
+    @tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) desc').pluck(:tweet_id))
   end
 
   def new
@@ -38,7 +42,7 @@ class TweetsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user).order('created_at asc')
+    @comments = @tweet.comments.includes(:user).order('created_at desc')
     @user = @tweet.user
   end
 

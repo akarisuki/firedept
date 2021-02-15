@@ -1,0 +1,4 @@
+= form_with(model: @message) do |f|
+    = t.text_field :message, placeholder: "メッセージを入力して下さい" , size: 70
+    = f.hidden_field :room_id, value: @room.id
+    = f.submit "投稿"

@@ -1,0 +1,38 @@
+%h4.rooms-title 気になる
+- @entries.each do |e|
+  .user-name
+    %strong
+
+      %a.rooms-user-link{href: "/users/#{e.user.id}"}
+        = e.user.username
+        さん
+
+%hr
+.chats
+  .chat_scroll
+
+    - if @messages.present?
+      - @messages.each do |m|
+        %div{id: "message_#{m.id}"}
+          - if m.user_id == current_user.id
+            .chatbox
+              .chat-face1
+
+                .chat-hukidashi
+                = m.user.username
+                %br
+                = m.message
+                %br
+                編集
+                削除
+          - else
+            .chatbox
+              .chat-face2
+
+                .chat-hukidashi
+                = m.user.username
+                %br
+                = m.message
+                %br
+                
+      　　　

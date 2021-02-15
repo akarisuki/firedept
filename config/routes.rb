@@ -1,27 +1,30 @@
 Rails.application.routes.draw do
 
-  get 'rooms/index'
-  get 'rooms/create'
-  get 'rooms/show'
-  get 'messages/create'
-  get 'messages/edit'
-  get 'messages/update'
-  get 'messages/destroy'
-  devise_for :users
+  
+  get 'notifications/index'
+  devise_for :users, controller:{
+    #registrations: "users/registrations",
+    #sessions: "users/sessions"
+  }
   root to: 'tweets#index'
   namespace :tweets do
     resources :searches, only: :index
   end
   resources :tweets do 
+    collection do 
+      get :likes
+    end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
   
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :edit, :update] do
     member do
-      get :likes, :following, :followers
+      get :likes, :following, :followers,:setting
     end
   end
   resources :relationships, only: [:create, :destroy]
-
+  resources :messages, only: [:create, :edit, :update, :destroy]
+  resources :rooms, only: [:index, :show, :create]
+  resources :notifications, only: :index
 end
