@@ -4,14 +4,30 @@ class TweetsController < ApplicationController
   
   def index
     @tweets = Tweet.includes(:user).order('updated_at desc').page(params[:page]).per(5)
+    if params[:tag_name]
+      @tweets = Tweet.includes(:user).order('updated_at desc').page(params[:page]).per(5).tagged_with("#{params[:tag_name]}")
+    end
+    return nil if params[:keyword] == ""
+    @allTags = Tweet.tag_counts_on(:tags)
+    @tags = @allTags.where(['name LIKE ?', "%#{params[:keyword]}%"])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def likes
-    @tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) desc').pluck(:tweet_id))
+    @tweets = Tweet.includes(%i[taggings user]).order('likes_count desc').page(prams[:page]).per(10)
+  end
+
+  def taglist
+    @tags = Tweet.tag_counts_on(:tags)
   end
 
   def new
       @tweet = Tweet.new
+      @tags= Tweet.tag_counts_on(:tags)
+      @tag_select = ["rails","java"]
   end
 
   def create
@@ -28,6 +44,12 @@ class TweetsController < ApplicationController
     if @tweet.user_id != current_user.id
       redirect_to root_path, notice: "不正な操作です"
     end
+    return nil if params[:keyword] == ""
+    @allTags = Tweet.tag_counts_on(:tags)
+    @tags = @allTags.where(['name LIKE ?', "%#{params[:keyword]}%"])
+    respond_to do |format|
+      format.html
+      format.json
   end
 
   def update
@@ -55,7 +77,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:title, :txet, :image, :video).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:title, :txet, :image, :video, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_tweet

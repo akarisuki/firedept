@@ -1,0 +1,7 @@
+.col-md-6.mx-auto
+  - if @activities.exists?
+    - @activities.each do |activity|
+      = render '/activities/activities', activity: activity
+  - else
+    %p.text-center
+    アクティビティはありません

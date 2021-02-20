@@ -28,7 +28,7 @@
                 = f.hidden_field :room_id, value: @room.id
                 = f.submit "編集"
 
-              = form_with(model: @message, url: edit_message_path(m.id), remote: ture, method: :delete) do |f|
+              = form_with(model: @message, url: edit_message_path(m.id), remote: ture, method: :delete, data: { confirm: '削除してよろしいですか？'}) do |f|
                 = f.hidden_field :room_id, value: @room.id
                 = f.submit "削除"
 

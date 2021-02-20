@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 
   def show
     @tweets  =  @user.tweets.order('updated_at desc').page(params[:page]).per(5)
+    if params[:tag_name]
+      @tweets = @user.tweets.order.order('updated_at desc').page(params[:page]).per(5).tagged_with("#{params[:tag_name]}")
+    end
 
     if user_signed_in?
       @currentUserEntry = Entry.where(user_id: current_user.id)
@@ -51,7 +54,10 @@ class UsersController < ApplicationController
  
 
   def likes
-    @user = User.find(params[:id])
+    @tweets = @user.liked_tweets.order('updated_at desc').page(params[:page]).per(5)
+    if params[:tag_name]
+      @tweets = @user.liked_tweets.order.order('updated_at desc').page(params[:page]).per(5).tagged_with("#{:tag_name}")
+    end
   end
 
   def following

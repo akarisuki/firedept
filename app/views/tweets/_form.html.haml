@@ -5,4 +5,6 @@
       = f.text_area  :text
       = f.label :image do
         = f.file_field :image
-      = = f.submit '投稿'
+      .from-group
+        = f.text_field :tag_list, value: @tweet.tag_list.join(','), class: "tag-form"
+      = f.submit '投稿する', class: "tweets_form"

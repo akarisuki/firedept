@@ -11,7 +11,7 @@ class Tweet < ApplicationRecord
   
   #likes
   has_many :likes, dependent: :destroy
-  has_many :liked_users, through: :likes, source :user
+  has_many :liked_users, through: :likes, source: :user
 
   def like_user(user_id)
     likes.find_by(user_id: user_id)
@@ -19,8 +19,8 @@ class Tweet < ApplicationRecord
 
   #tweets
   #monut_uploader :avatar, AvatarUploader
-
-  validates :title, :text presence: true, length: { maximum: 65_535 }
+  validates :text, presence: true, length: { maximum: 1500 }
+  validates :title, presence: true, length: { maximum: 1500 }
 
   belongs_to :user
   #comments
@@ -73,5 +73,7 @@ class Tweet < ApplicationRecord
     notification.save if notification.valid?
     
   end
+
+  acts_as_taggable
   
 end

@@ -4,7 +4,7 @@
       = @user.username
       = image_tag "#{@user.avatar}", class: "avatar"
     = render "resationships/follow"
-    = render "contact"
+    = render "/users/contact"
     = like_to "いいね！した投稿", likes_user_path
     投稿一覧
     .tweets_list
