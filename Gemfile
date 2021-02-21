@@ -46,6 +46,9 @@ end
 group :development do
 
   gem 'web-console', '>= 3.3.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rubocop', require: false
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -56,8 +59,19 @@ end
 gem 'devise'
 #ページネーション
 gem 'kaminari', '~> 1.2.1'
-
+#画像投稿機能
+gem 'carrierwave'
+#jquery導入
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+#haml導入
+gem 'haml-rails'
+gem 'erb2haml'
+
+#画像リサイズ
+gem 'mini_magick'
+#タグ機能
+gem 'acts-as-taggable-on'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
