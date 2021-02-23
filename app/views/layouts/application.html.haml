@@ -1,0 +1,9 @@
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type", name: "viewport", content:"width=device-width, initial-scale=1, shrink-to-fit=no"}
+    %title Firedept
+    = csrf_meta_tags
+    = csp_meta_tag
+    = include_gon
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
