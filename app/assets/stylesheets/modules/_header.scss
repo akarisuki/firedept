@@ -1,0 +1,99 @@
+.header {
+  top: -1px;
+  left: 0px;
+  width: 1920px;
+  height: 79px;
+  position: relative;
+
+  &-contents {
+    max-width: 1920px;
+    margin: auto;
+  }
+  &-top {
+    display: flex;
+    border-bottom: 1px;
+    height: 75px;
+    background-color:  #ED2B2B;
+    &_left {
+      
+      &-title{
+        color: black;
+        font-family: "serif";
+        font-size: 30px;
+        font-stretch: expanded;
+        }
+    }
+
+    &_right {
+      padding-left: 1000px;
+
+      
+      
+        
+
+      }
+    }
+    
+
+  
+  &-bottom {
+    display: flex;
+    height: 50px;
+    background-color: #FB9926;
+  }
+
+  
+    
+
+
+
+
+
+
+}
+
+.header-top_right_button{
+  color: black;
+  margin-top: 10px;
+  font-size: 23px;
+  top: 15px;
+  left: 1090px;
+  width: 185px;
+  height: 55px;
+  border: 1px solid black;
+  border-radius: 28px;
+  background-color: #ED2B2B ;
+  opacity: 1;
+  filter: blur(undefined);
+  &:hover {
+    background-color: white;
+    color: rgb(5, 70, 190);
+    
+  }
+}
+
+.dropdown{
+  text-align: center;
+  padding-top: 10px;
+  bottom: 56px;
+  height: 55px;
+  width: 185px;
+  color: black;
+  font-size: 23px;
+  left: 568px;
+  border: 1px solid black;
+  border-radius: 28px;
+  opacity: 1;
+  &-toggle{
+    color: black;
+  }
+
+}
+.dropdown-menu{
+  font-size: 23px;
+}
+
+
+
+
+

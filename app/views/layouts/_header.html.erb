@@ -1,0 +1,55 @@
+<header class = "header">
+  <div class= "header-contents">
+    <div class= "header-top">
+      <div class= "header-top_left">
+        <%= link_to root_path do %>
+        <h1 class= "header-top_left-title">Fire Dept </h1>
+        <% end %>
+      </div>
+      <div class= "header-top_right">
+
+        <div class= "header-top_right-user">
+          <% if user_signed_in? %>
+            <div class= "header-top_right-username">
+              <%= current_user.username %>
+            </div>
+
+            <div class= "header-top_right-avatar">
+              <!--%=#image_tag "#{current_user.avatar}",class: "avatar"%-->
+            </div>
+            
+          <% else %>
+            
+            <%= link_to new_user_registration_path do %>
+             <input class= "header-top_right_button" type="submit" value="新規登録">
+            <% end %>
+            <%= link_to new_user_session_path do %>
+             <input class= "header-top_right_button" type="submit" value="ログイン">
+            <% end %>
+            <%= link_to   users_guest_sign_in_path do%>
+             <input class= "header-top_right_button" type="submit" value="ゲストログイン">
+            <% end %>
+
+            <li class= "dropdown">
+             
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">メニュー <span class="caret"></span></a>
+             <ul class= "dropdown-menu">
+               <li><a href="#"><%= link_to "消防署検索" %></a></li>
+               <li><a href="#"><%= link_to "消防法令改正"%></a></li>
+             </ul>
+            </li>
+          <% end %>
+          
+
+
+        </div>
+      </div>
+      
+    </div>
+    <div class= "header-bottom">
+     
+      <div class= "header-bottom_center">
+      </div>
+    </div>
+  </div>
+</header>

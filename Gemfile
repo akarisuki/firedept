@@ -61,6 +61,8 @@ gem 'devise'
 gem 'kaminari', '~> 1.2.1'
 #画像投稿機能
 gem 'carrierwave'
+#bootstrap導入
+gem 'bootstrap-sass'
 #jquery導入
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

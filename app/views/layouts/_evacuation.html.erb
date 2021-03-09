@@ -1,0 +1,22 @@
+
+<!--tweetsコントローラーとタグを作るまで一時避難-->
+<div class= "header-bottom">
+      <!--div class= "header-bottom_left">
+        <ul class= "header-bottom_left-list">
+          <% @tags = ["警防","救助","救急","予防"]%>
+          <% @tags.each do |tag| %>
+          <% end %>
+          <li class= "header-bottom_list_item">
+            <%= link_to tag, tweets_path(tag_name: tag), class: "header-bottom_list-name"%>
+          </li>
+          <ul class= "header-bottom_list_tags">
+            <%= link_to "全てのタグ", tags_tweets_path, class: ".header-bottom_list-name"%>
+          </ul>
+        </ul>
+
+      </div-->
+      <div class= "header-bottom_center">
+        <%= form_with(url: tweets_searches_path,local: ture, method: :get) do |f| %>
+        <%= f.text_field :keyword, placeholder: "検索", class: "header-bottom_center-search"%>
+      </div>
+    </div>
