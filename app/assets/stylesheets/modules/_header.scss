@@ -3,7 +3,7 @@
   left: 0px;
   width: 1920px;
   height: 79px;
-  position: relative;
+  position: fixed;
 
   &-contents {
     max-width: 1920px;
@@ -18,14 +18,14 @@
       
       &-title{
         color: black;
-        font-family: "serif";
+        font-family: "ヒラギノ明朝 ProN W6";
         font-size: 30px;
         font-stretch: expanded;
         }
     }
 
     &_right {
-      padding-left: 1000px;
+      padding-left: 940px;
 
       
       
@@ -57,7 +57,7 @@
   margin-top: 10px;
   font-size: 23px;
   top: 15px;
-  left: 1090px;
+  left: 1000px;
   width: 185px;
   height: 55px;
   border: 1px solid black;

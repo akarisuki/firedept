@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <%= link_to new_tweet_path, class: "new-btn" do %>
+    <div class="new-btn_tweet">
+      <p class="new-btn_tweet-text">
+        投稿
+      </p>
+      <div class="new-btn_tweet-icon">
+        
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <div class="new-btn_session">
+      <div class="new-btn_session-text">
+        <p> ログイン </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

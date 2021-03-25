@@ -61,6 +61,7 @@ gem 'devise'
 gem 'kaminari', '~> 1.2.1'
 #画像投稿機能
 gem 'carrierwave'
+gem 'carrierwave-aws'
 #bootstrap導入
 gem 'bootstrap-sass'
 #jquery導入
@@ -69,6 +70,10 @@ gem 'jquery-ui-rails'
 #haml導入
 gem 'haml-rails'
 gem 'erb2haml'
+#JS変数使用可能
+gem 'gon'
+#マークダウン
+gem 'redcarpet'
 
 #画像リサイズ
 gem 'mini_magick'

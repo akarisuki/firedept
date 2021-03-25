@@ -1,0 +1,14 @@
+<div class= "wrapper">
+  <%= form_with(model: @tweet, local: true, id: "tweet-form") do |f| %>
+
+    <div class= "tweet-form">
+      <div class="tweet-form_title">
+        <%= f.text_field :title, class: "tweet-from_title--body", placeholder: "タイトルを入力して下さい（30文字以内）"%>
+      </div>
+
+      <div class= "tweet-form_text">
+        
+      </div>
+    </div>
+  <% end %>
+</div>
